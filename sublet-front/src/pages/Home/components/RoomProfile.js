@@ -32,7 +32,7 @@ export const RoomProfile = ({ room, likes, setLikes }) => {
     <Container>
       <IconButton onClick={() => moveToRoomInfo({ room })}>
         <Image
-          src={`${process.env.REACT_APP_BACKEND_URL}/public/${room.image_id[0]}.jpg`}
+          src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/public/${room.image_id[0]}.jpg`}
           alt="Room image"
         />
       </IconButton>

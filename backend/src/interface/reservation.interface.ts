@@ -22,6 +22,12 @@ export class ReservationBase {
   @IsPositive()
   @IsInt()
   pay: number;
+
+  @IsString()
+  reservation_progress: string;
+
+  @IsString()
+  move_in_instruction: string;
 }
 
 export class ReservationExportInterface extends ReservationBase {

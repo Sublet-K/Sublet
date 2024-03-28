@@ -128,17 +128,19 @@ model RequestForm {
 }
 
 model Reservation {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  version     Int      @default(1)
-  key         Int      @unique
-  r_start_day DateTime @db.Date
-  r_end_day   DateTime @db.Date
-  pay         Int
-  user_id     String   @db.ObjectId
-  user        User     @relation(fields: [user_id], references: [id])
-  post_id     String   @db.ObjectId
-  post        Post     @relation(fields: [post_id], references: [id])
-  deleted     Boolean  @default(false)
+  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
+  version              Int      @default(1)
+  key                  Int      @unique
+  r_start_day          DateTime @db.Date
+  r_end_day            DateTime @db.Date
+  pay                  Int
+  user_id              String   @db.ObjectId
+  user                 User     @relation(fields: [user_id], references: [id])
+  post_id              String   @db.ObjectId
+  post                 Post     @relation(fields: [post_id], references: [id])
+  deleted              Boolean  @default(false)
+  reservation_progress String   @default("예약 요청")
+  move_in_instruction  String   @default("")
 }
 
 model ReservationIncrementKey {

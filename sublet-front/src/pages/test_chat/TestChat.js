@@ -8,7 +8,7 @@ const testStore = create(set => {
     user: {},
     setUser: async () => {
       const resp = await fetch(
-        `${process.env.REACT_APP_TEST_BACKEND_URL}/user`,
+        `${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/user`,
         {
           method: 'GET',
           credentials: 'include',
@@ -20,7 +20,7 @@ const testStore = create(set => {
       }
     },
     login: async (id, password) => {
-      await fetch(`${process.env.REACT_APP_TEST_BACKEND_URL}/auth/login`, {
+      await fetch(`${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/auth/login`, {
         method: 'POST',
         body: JSON.stringify({
           id: id,
@@ -32,7 +32,7 @@ const testStore = create(set => {
         credentials: 'include',
       });
       const resp2 = await fetch(
-        `${process.env.REACT_APP_TEST_BACKEND_URL}/user`,
+        `${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/user`,
         {
           method: 'GET',
           credentials: 'include',
@@ -44,7 +44,7 @@ const testStore = create(set => {
       }
     },
     register: async (id, password, email, phone) => {
-      await fetch(`${process.env.REACT_APP_TEST_BACKEND_URL}/user`, {
+      await fetch(`${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/user`, {
         method: 'POST',
         body: JSON.stringify({
           user_id: id,
@@ -64,7 +64,7 @@ const testStore = create(set => {
       });
     },
     logOut: async afterFunc => {
-      await fetch(`${process.env.REACT_APP_TEST_BACKEND_URL}/auth/logout`, {
+      await fetch(`${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/auth/logout`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const testStore = create(set => {
     },
     printUser: async () => {
       const resp = await fetch(
-        `${process.env.REACT_APP_TEST_BACKEND_URL}/user`,
+        `${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/user`,
         {
           method: 'GET',
           headers: {
@@ -91,7 +91,7 @@ const testStore = create(set => {
     posts: [],
     getPostsFromBackend: async () => {
       const resp = await fetch(
-        `${process.env.REACT_APP_TEST_BACKEND_URL}/post`,
+        `${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/post`,
         {
           method: 'GET',
           headers: {
@@ -152,7 +152,7 @@ const testStore = create(set => {
       for (const [key, value] of Object.entries(roomInfo)) {
         formData.append(key, value);
       }
-      await fetch(`${process.env.REACT_APP_TEST_BACKEND_URL}/post`, {
+      await fetch(`${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/post`, {
         method: 'POST',
         body: formData,
         credentials: 'include',
@@ -181,7 +181,15 @@ const TestChat = () => {
     getPostsFromBackend();
     setUser();
     if (!socket) {
+<<<<<<< HEAD
+<<<<<<< HEAD
+      setSocket(io(process.env.NEXT_PUBLIC_BACKEND_WS_URL));
+=======
       setSocket(io(process.env.REACT_APP_BACKEND_WS_URL, { withCredentials: true }));
+>>>>>>> ce4619d3de54dcecbd54d44f9284806fc36d8a05
+=======
+      setSocket(io(process.env.REACT_APP_BACKEND_WS_URL, { withCredentials: true }));
+>>>>>>> ce4619d3de54dcecbd54d44f9284806fc36d8a05
     }
   }, []);
 

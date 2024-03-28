@@ -19,7 +19,7 @@ export function PostSummaryBlock({
   price,
   address,
 }) {
-  const imageLink = `${process.env.REACT_APP_BACKEND_URL}/public/${room.image_id[0]}.jpg`;
+  const imageLink = `${process.env.NEXT_PUBLIC_BACKEND_URL}/public/${room.image_id[0]}.jpg`;
   const key = room.key;
   const [inputs, setInputs] = useState({
     detailDialogShow: false,

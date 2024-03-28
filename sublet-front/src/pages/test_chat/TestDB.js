@@ -6,7 +6,7 @@ const TestDB = () => {
 
   const fetchData = async () => {
     const res = await fetch(
-      `${process.env.REACT_APP_TEST_BACKEND_URL}/test/dblist`,
+      `${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/test/dblist`,
     );
     const data = await res.json();
     setData(data);

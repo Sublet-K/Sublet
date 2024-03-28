@@ -23,7 +23,7 @@ export default function Home() {
   const [listPageAmount, setListPageAmount] = useState(1);
 
   const getBackendURL = (listRoomAmount, listPageAmount) => {
-    return `${process.env.REACT_APP_BACKEND_URL}/post?maxPost=${listRoomAmount}&page=${listPageAmount}`;
+    return `${process.env.NEXT_PUBLIC_BACKEND_URL}/post?maxPost=${listRoomAmount}&page=${listPageAmount}`;
   };
 
   const fetchRoomsDefault = () => {

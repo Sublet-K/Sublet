@@ -8,7 +8,6 @@ export default SaveSublet;
 
 // 미완. 오류나는데 어차피 작업이 덜 된 코드로 주석처리. Next.js 에서 구현하는 것이 더 좋다 판단.
 
-
 // import React, { useEffect, useState } from 'react';
 // import Map from '@shared/components/Map/Map';
 // import PinDropIcon from '@mui/icons-material/PinDrop';
@@ -63,7 +62,7 @@ export default SaveSublet;
 
 //   const fetchRoomsDefault = async () => {
 //     const data = await fetch(
-//       `${process.env.REACT_APP_BACKEND_URL}/post?maxPost=6&page=1`,
+//       `${process.env.NEXT_PUBLIC_BACKEND_URL}/post?maxPost=6&page=1`,
 //     ).then(res => res.json());
 //     setRoomInfo(data);
 //   };
@@ -74,7 +73,7 @@ export default SaveSublet;
 //     });
 //     fetchRoomsDefault();
 
-//     // let res = await fetch(process.env.REACT_APP_BACKEND_URL + `/post/${2}`);
+//     // let res = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL + `/post/${2}`);
 //     // let data = await res.json();
 //     // setRoomsData([...roomsData, ...data]);
 //     // setListPageAmount(listPageAmount + 1);

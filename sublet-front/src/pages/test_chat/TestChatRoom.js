@@ -26,7 +26,7 @@ const TestChatRoom = () => {
 
   useEffect(() => {
     if (!socket) {
-      setSocket(io(process.env.REACT_APP_BACKEND_WS_URL));
+      setSocket(io(process.env.NEXT_PUBLIC_BACKEND_WS_URL));
     } else {
       socket.emit('get_chatlog', { chat_id: params.chatId }, ret => {
         console.log('get chatlog responded!');

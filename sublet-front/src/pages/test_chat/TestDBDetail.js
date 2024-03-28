@@ -27,7 +27,7 @@ const TestDBDetail = () => {
 
   const fetchData = async () => {
     const res = await fetch(
-      `${process.env.REACT_APP_TEST_BACKEND_URL}/test/db/${name}`,
+      `${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/test/db/${name}`,
     );
     const data = await res.json();
     setData(data);
@@ -35,7 +35,7 @@ const TestDBDetail = () => {
 
   const deleteData = async id => {
     await fetch(
-      `${process.env.REACT_APP_TEST_BACKEND_URL}/test/db/${name}/${id}`,
+      `${process.env.NEXT_PUBLIC_TEST_BACKEND_URL}/test/db/${name}/${id}`,
       {
         method: 'DELETE',
       },

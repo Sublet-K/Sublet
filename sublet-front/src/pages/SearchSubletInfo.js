@@ -41,7 +41,7 @@ function SubletInfo(props) {
             alt="Room"
             className="h-20 w-20 rounded-lg"
             height="80"
-            src={`${process.env.REACT_APP_BACKEND_URL}/public/${props.image_id[0]}.jpg`}
+            src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/public/${props.image_id[0]}.jpg`}
             style={{
               aspectRatio: '80/80',
               objectFit: 'cover',
@@ -112,7 +112,7 @@ export default function SearchSubletInfo(props) {
   }, []);
 
   // 이게 왜 있는 건지 아는 사람..? jihwanki? @JiHwanKi
-  useEffect(() => { }, [postAll[0]?.marker]);
+  useEffect(() => {}, [postAll[0]?.marker]);
 
   return (
     <div className="max-w-7xl mx-auto p-5">

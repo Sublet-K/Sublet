@@ -8,7 +8,7 @@ import { FetchGetOneUser } from '@shared/components/FetchList/FetchList.js';
 
 function HostInfo({ user }) {
   const { userId } = useParams();
-
+  console.log(userId)
   const title = user.username + '님의 프로필 | ItHome';
   // useTitle(title);
   const [userInfo, setUserInfo] = useState([]);

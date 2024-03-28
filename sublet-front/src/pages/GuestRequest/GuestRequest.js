@@ -112,7 +112,7 @@ function GuestRequest() {
         }),
       };
 
-      fetch(`${process.env.REACT_APP_BACKEND_URL}/request`, requestOptions)
+      fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/request`, requestOptions)
         .then(res => res.json())
         .then(response => {
           console.log('result RequestFunc', response);

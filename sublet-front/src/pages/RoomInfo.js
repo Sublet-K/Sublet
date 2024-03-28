@@ -94,7 +94,7 @@ export default function RoomInfo() {
             .find(post => post.key == nowRoomNum)
             .image_id.map((image_id, index) => (
               <img
-                src={`${process.env.REACT_APP_BACKEND_URL}/public/${image_id}.jpg`}
+                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/public/${image_id}.jpg`}
                 alt={`image ${index}`}
                 className="h-full object-cover m-auto"
               />

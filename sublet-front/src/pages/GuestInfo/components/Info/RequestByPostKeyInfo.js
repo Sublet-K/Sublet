@@ -10,7 +10,7 @@ export function RequestByPostKeyInfo({ Post }) {
       <SecondHead>응답 현황</SecondHead>
       <Horizon />
       {Post.map(res => {
-        const imageLink = `${process.env.REACT_APP_BACKEND_URL}/public/${res.image_id[0]}.jpg`;
+        const imageLink = `${process.env.NEXT_PUBLIC_BACKEND_URL}/public/${res.image_id[0]}.jpg`;
         return (
           <>
             <div className="mt-2 grid grid-cols-4">

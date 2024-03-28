@@ -42,7 +42,7 @@ function CreateSubletInfo() {
     // 자동 로그인...
     // Login({ id: "test", password: "Test@0525" });
     const login = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/auth/login`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
       {
         method: 'POST',
         credentials: 'include',
@@ -56,7 +56,7 @@ function CreateSubletInfo() {
       },
     );
 
-    // const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/post`, {
+    // const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/post`, {
     //   method: 'POST',
     //   credentials: "include",
     //   headers: {
@@ -140,11 +140,14 @@ function CreateSubletInfo() {
     for (const [key, value] of Object.entries(roomInfo)) {
       formData.append(key, value);
     }
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/post`, {
-      method: 'POST',
-      body: formData,
-      credentials: 'include',
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/post`,
+      {
+        method: 'POST',
+        body: formData,
+        credentials: 'include',
+      },
+    );
 
     // const data = await response.json();
     console.log(response);

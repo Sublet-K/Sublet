@@ -7,7 +7,7 @@ import { VerifyList } from 'pages/GuestInfo/components/Info/VerifyList';
 
 export const UserBaseComponent = ({ user }) => {
   const frame = verifyFrame(user);
-  const imageLink = `${process.env.REACT_APP_BACKEND_URL}/public_user/${user.image_id}.jpg`;
+  const imageLink = `${process.env.NEXT_PUBLIC_BACKEND_URL}/public_user/${user.image_id}.jpg`;
 
   return (
     <>

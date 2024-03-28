@@ -10,7 +10,7 @@ import { guestInfoPopUpStore } from '@shared/components/Popup/store/guestInfoSto
 
 export function UserBaseComponent({ user }) {
   const frame = verifyFrame(user);
-  const imageLink = `${process.env.REACT_APP_BACKEND_URL}/public_user/${user.image_id}.jpg`;
+  const imageLink = `${process.env.NEXT_PUBLIC_BACKEND_URL}/public_user/${user.image_id}.jpg`;
   const { setImagePopUpState } = guestInfoPopUpStore(state => ({
     setImagePopUpState: state.setImagePopUpState,
   }));

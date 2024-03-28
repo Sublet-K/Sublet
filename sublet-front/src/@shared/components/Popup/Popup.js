@@ -19,7 +19,7 @@ import {
   FetchLogin,
   FetchSignUp,
   FetchUploadPost,
-  FetchGetMyUser
+  FetchGetMyUser,
 } from '../FetchList/FetchList.js';
 
 import {
@@ -331,13 +331,13 @@ export function ShareDialog({ description, title, image_id }) {
   // 로컬 주소 (localhost 3000 같은거)
   const resultUrl = window.location.href;
   const { Kakao } = window;
-  const imageUrl = `${process.env.REACT_APP_BACKEND_URL}/public/${image_id[0]}.jpg`;
+  const imageUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}/public/${image_id[0]}.jpg`;
   // 재랜더링시에 실행되게 해준다.
   useEffect(() => {
     // init 해주기 전에 clean up 을 해준다.
     Kakao.cleanup();
     // 자신의 js 키를 넣어준다.
-    Kakao.init(process.env.REACT_APP_KAKAO_JS);
+    Kakao.init(process.env.NEXT_PUBLIC_KAKAO_JS);
   }, []);
 
   const shareKakao = () => {
@@ -774,7 +774,7 @@ export function LoginDialog() {
   };
 
   const idList = {
-    google: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+    google: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
   };
 
   return (
